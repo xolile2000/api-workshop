@@ -7,8 +7,69 @@
 	<title>Filter widget</title>
 	<link rel="stylesheet" href="style.css">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js" integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script> 
+
+	 <script type="text/template" class="tampleteDisplay">
+		<ul>
+			{{#each display}}
+			<li>
+			{{this.colors}}
+			</li>
+		{{/each}} 
+		</ul>
+	</script>
+
+	<script type="text/template" class="tampleteBrand">
+		<ul>
+			{{#each display}}
+			<li>
+			{{this.make}} 
+			</li>
+		{{/each}} 
+		</ul>
+	</script>
+
 </head>
 <body>
+
 	<h1>Filter widget</h1>
+
+	<div class="brands">
+
+	<label for="brands">Choose brands:</label>
+
+	<select name="brand" id="brand">
+		<option value="Volkswagen">Volkswagen</option>
+		<option value="Toyota">Toyota</option>
+		<option value="Nissan">Nissan</option>
+		<option value="Ford">Ford</option>
+	  </select>
+</div>
+
+
+<div class="colors">
+	<label for="colors">Choose colors:</label>
+
+	<select name="colors" id="colors">
+	  <option value="Blue">Blue</option>
+	  <option value="Red">Red</option>
+	  <option value="Orange">Orange</option>
+	  <option value="White">White</option>
+	  <option value="Grey">Grey</option>
+	</select>
+</div>
+
+
+<div>
+	<button type="submit" name="btn" value="btn">submit</button>
+</div>
+
+<div class="display">
+
+</div>
+
 </body>
+
+<script src="filter.js"></script>
 </html>
